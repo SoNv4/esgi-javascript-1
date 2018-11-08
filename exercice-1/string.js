@@ -1,8 +1,12 @@
 function uc_first(string) {
+    if (string == null)
+        return "";
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function capitalize(string){
+    if (string == null)
+        return "";
     return string.toLowerCase()
         .split(' ')
         .map(string => uc_first(string))
@@ -10,18 +14,24 @@ function capitalize(string){
 }
 
 function camel_case(string) {
+    if (string == null)
+        return "";
     return capitalize(string)
         .split(' ')
         .join('');
 }
 
 function snake_case(string) {
+    if (string == null)
+        return "";
     return string.toLowerCase()
         .split(' ')
         .join('_');
 }
 
 function leet(string) {
+    if (string == null)
+        return "";
     return string.split('').map(l =>
         {
             switch (l) {
@@ -58,7 +68,7 @@ function leet(string) {
 }
 
 function prop_access(object, path) {
-    if (path == null || path === '')
+    if (path == null || path === '' || object == null)
         return object;
 
     const props = path.split('.');
@@ -74,16 +84,22 @@ function prop_access(object, path) {
 }
 
 function verlan(string) {
+    if (string == null)
+        return "";
     return string.split(' ')
         .map(word => word.split('').reverse().join(''))
         .join(' ');
 }
 
 function yoda(string) {
+    if (string == null)
+        return "";
     return string.split(' ').reverse().join(' ');
 }
 
 function vig(string, key) {
+    if (string == null || key == null)
+        return "";
     var cryptedString = "";
     for (var i=1; i <= string.length; i++) {
         var alphabetPositionString = string.toUpperCase().charCodeAt(i-1) - 65;
