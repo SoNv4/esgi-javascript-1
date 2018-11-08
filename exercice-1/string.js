@@ -1,10 +1,16 @@
+/**
+ *  @param {string} string
+ */
 function uc_first(string) {
     if (string == null)
         return "";
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function capitalize(string){
+/**
+ *  @param {string} string
+ */
+function capitalize(string) {
     if (string == null)
         return "";
     return string.toLowerCase()
@@ -21,6 +27,9 @@ function camel_case(string) {
         .join('');
 }
 
+/**
+ *  @param {string} string
+ */
 function snake_case(string) {
     if (string == null)
         return "";
@@ -29,44 +38,43 @@ function snake_case(string) {
         .join('_');
 }
 
+/**
+ *  @param {string} string
+ */
 function leet(string) {
     if (string == null)
         return "";
-    return string.split('').map(l =>
-        {
+    return string.split('').map(l => {
             switch (l) {
                 case 'A':
                 case 'a':
                     return 4;
-                    break;
                 case 'E':
                 case 'e':
                     return 3;
-                    break;
                 case 'I':
                 case 'i':
                     return 1;
-                    break;
                 case 'O':
                 case 'o':
                     return 0;
-                    break;
                 case 'U':
                 case 'u':
                     return "(_)";
-                    break;
                 case 'Y':
                 case 'y':
                     return 7;
-                    break;
                 default:
                     return l;
-                    break;
             }
         }
     ).join('')
 }
 
+/**
+ *  @param {string} path
+ *  @param {object} object
+ */
 function prop_access(object, path) {
     if (path == null || path === '' || object == null)
         return object;
@@ -83,6 +91,9 @@ function prop_access(object, path) {
     return property;
 }
 
+/**
+ *  @param {string} string
+ */
 function verlan(string) {
     if (string == null)
         return "";
@@ -91,20 +102,27 @@ function verlan(string) {
         .join(' ');
 }
 
+/**
+ *  @param {string} string
+ */
 function yoda(string) {
     if (string == null)
         return "";
     return string.split(' ').reverse().join(' ');
 }
 
+/**
+ *  @param {string} string
+ *  @param {string} key
+ */
 function vig(string, key) {
     if (string == null || key == null)
         return "";
-    var cryptedString = "";
-    for (var i=1; i <= string.length; i++) {
-        var alphabetPositionString = string.toUpperCase().charCodeAt(i-1) - 65;
-        var alphabetPositionKey = key.toUpperCase().charCodeAt((i-1) % key.length) - 65;
-        cryptedString += String.fromCharCode(65+ (alphabetPositionString + alphabetPositionKey) % 26);
+    let cryptedString = "";
+    for (let i = 1; i <= string.length; i++) {
+        const alphabetPositionString = string.toUpperCase().charCodeAt(i - 1) - 65;
+        const alphabetPositionKey = key.toUpperCase().charCodeAt((i - 1) % key.length) - 65;
+        cryptedString += String.fromCharCode(65 + (alphabetPositionString + alphabetPositionKey) % 26);
     }
     return cryptedString;
 }
