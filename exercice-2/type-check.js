@@ -1,8 +1,10 @@
 function type_check_v1(value, type) {
-    if (value === null && type !== "null")
-        return false;
+    if (type === "null" || value === null)
+        return value === null;
+    if (type === "undefined" || value === undefined)
+        return value === undefined;
     if (type === "array" && Array.isArray(value))
-        return true;
+        return false;
     return typeof value === type;
 }
 
