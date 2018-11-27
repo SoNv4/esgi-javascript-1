@@ -22,6 +22,7 @@ function capitalize(string) {
 function camelCase(string) {
     if (typeof string !== "string")
         return "";
+    string = string.replace("_", "");
     return capitalize(string)
         .split(' ')
         .join('');
@@ -139,7 +140,7 @@ function vig(string, key) {
 
 // console.log(uc_first("hello"));
 // console.log(capitalize("hello world"));
-// console.log(camel_case("hello world"));
+// console.log(camelCase("ToggleCase is_the coolest"));
 // console.log(snake_case("hello world"));
 // console.log(leet("anaconda"));
 //
@@ -150,4 +151,4 @@ function vig(string, key) {
 //
 // console.log(verlan("Hello World"));
 // console.log(yoda("Hello World"));
-console.log(vig("une phrase tres tres longue mais qui ne veut absolument rien dire car c est juste un test", "nawakdecheznawak"));
+// console.log(vig("une phrase tres tres longue mais qui ne veut absolument rien dire car c est juste un test", "nawakdecheznawak"));
