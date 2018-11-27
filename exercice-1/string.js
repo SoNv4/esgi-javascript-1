@@ -79,7 +79,7 @@ function prop_access(object, path) {
     if (path == null || path === '')
         return object;
     if (object == null) {
-        console.log('object not exist');
+        console.log('test not exist');
         return;
     }
     const props = path.split('.');
@@ -124,6 +124,10 @@ function vig(string, key) {
 
     let cryptedString = "";
     for (let i = 1; i <= string.length; i++) {
+        if (string[i - 1] === " ") {
+            cryptedString += " ";
+            continue;
+        }
         const alphabetPositionString = string.toUpperCase().charCodeAt(i - 1) - 65;
         const alphabetPositionKey = key.toUpperCase().charCodeAt((i - 1) % key.length) - 65;
         cryptedString += String.fromCharCode(65 + (alphabetPositionString + alphabetPositionKey) % 26);
@@ -144,4 +148,4 @@ function vig(string, key) {
 //
 // console.log(verlan("Hello World"));
 // console.log(yoda("Hello World"));
-// console.log(vig("une phrase tres tres longue mais qui ne veut absolument rien dire car c est juste un test", "nawakdecheznawak"));
+console.log(vig("une phrase tres tres longue mais qui ne veut absolument rien dire car c est juste un test", "nawakdecheznawak"));
