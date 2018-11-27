@@ -22,7 +22,7 @@ function capitalize(string) {
 function camelCase(string) {
     if (typeof string !== "string")
         return "";
-    string = string.replace("_", "");
+    string = string.replace("_", " ");
     return capitalize(string)
         .split(' ')
         .join('');
