@@ -19,7 +19,7 @@ function capitalize(string) {
         .join(' ');
 }
 
-function camel_case(string) {
+function camelCase(string) {
     if (typeof string !== "string")
         return "";
     return capitalize(string)
