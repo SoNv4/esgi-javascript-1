@@ -123,13 +123,15 @@ function vig(string, key) {
         return "";
 
     let cryptedString = "";
+    let space = 0;
     for (let i = 1; i <= string.length; i++) {
         if (string[i - 1] === " ") {
             cryptedString += " ";
+            space++;
             continue;
         }
         const alphabetPositionString = string.toUpperCase().charCodeAt(i - 1) - 65;
-        const alphabetPositionKey = key.toUpperCase().charCodeAt((i - 1) % key.length) - 65;
+        const alphabetPositionKey = key.toUpperCase().charCodeAt((i - 1 - space) % key.length) - 65;
         cryptedString += String.fromCharCode(65 + (alphabetPositionString + alphabetPositionKey) % 26);
     }
     return cryptedString.toLowerCase();
