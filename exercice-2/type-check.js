@@ -1,6 +1,7 @@
 function type_check_v1(value, type) {
+    if (value === null && type !== "null")
+        return false;
     return typeof value === type;
-
 }
 
 /**
@@ -27,3 +28,5 @@ function type_check_v2(value, check) {
 // console.log(type_check_v2("foo", {type:"string", value:"foo"}));
 // console.log(type_check_v2("bar", {type:"string", value:"foo"}));
 // console.log(type_check_v2(3, {enum:["foo", "bar", 3]}));
+
+console.log(type_check_v1("nullNotObject", "nullNotObject"));
