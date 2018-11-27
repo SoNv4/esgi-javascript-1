@@ -78,9 +78,10 @@ function leet(string) {
 function prop_access(object, path) {
     if (path == null || path === '')
         return object;
-    if (object == null)
+    if (object == null) {
         console.log('object not exist');
-
+        return;
+    }
     const props = path.split('.');
     let property = object;
     props.forEach(function (prop) {
@@ -118,8 +119,9 @@ function yoda(string) {
  *  @param {string} key
  */
 function vig(string, key) {
-    if (typeof string !== "string" || typeof string !== "string")
+    if (typeof string !== "string" || typeof key !== "string" || string === "")
         return "";
+
     let cryptedString = "";
     for (let i = 1; i <= string.length; i++) {
         const alphabetPositionString = string.toUpperCase().charCodeAt(i - 1) - 65;
@@ -142,4 +144,4 @@ function vig(string, key) {
 //
 // console.log(verlan("Hello World"));
 // console.log(yoda("Hello World"));
-// console.log(vig("wikipedia", "crypto"));
+console.log(vig("une phrase tres tres longue mais qui ne veut absolument rien dire car c est juste un test", "nawakdecheznawak"));
