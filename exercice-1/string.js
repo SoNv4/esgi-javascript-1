@@ -1,7 +1,7 @@
 /**
  *  @param {string} string
  */
-function uc_first(string) {
+function ucfirst(string) {
     if (typeof string !== "string")
         return "";
     return string.charAt(0).toUpperCase() + string.slice(1);
