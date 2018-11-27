@@ -76,8 +76,10 @@ function leet(string) {
  *  @param {object} object
  */
 function prop_access(object, path) {
-    if (path == null || path === '' || object == null)
+    if (path == null || path === '')
         return object;
+    if (object == null)
+        console.log('object not exist');
 
     const props = path.split('.');
     let property = object;
