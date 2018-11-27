@@ -2,7 +2,7 @@
  *  @param {string} string
  */
 function uc_first(string) {
-    if (string == null)
+    if (typeof string !== "string")
         return "";
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -11,7 +11,7 @@ function uc_first(string) {
  *  @param {string} string
  */
 function capitalize(string) {
-    if (string == null)
+    if (typeof string !== "string")
         return "";
     return string.toLowerCase()
         .split(' ')
@@ -20,7 +20,7 @@ function capitalize(string) {
 }
 
 function camel_case(string) {
-    if (string == null)
+    if (typeof string !== "string")
         return "";
     return capitalize(string)
         .split(' ')
@@ -31,7 +31,7 @@ function camel_case(string) {
  *  @param {string} string
  */
 function snake_case(string) {
-    if (string == null)
+    if (typeof string !== "string")
         return "";
     return string.toLowerCase()
         .split(' ')
@@ -42,7 +42,7 @@ function snake_case(string) {
  *  @param {string} string
  */
 function leet(string) {
-    if (string == null)
+    if (typeof string !== "string")
         return "";
     return string.split('').map(l => {
             switch (l) {
@@ -95,7 +95,7 @@ function prop_access(object, path) {
  *  @param {string} string
  */
 function verlan(string) {
-    if (string == null)
+    if (typeof string !== "string")
         return "";
     return string.split(' ')
         .map(word => word.split('').reverse().join(''))
@@ -106,7 +106,7 @@ function verlan(string) {
  *  @param {string} string
  */
 function yoda(string) {
-    if (string == null)
+    if (typeof string !== "string")
         return "";
     return string.split(' ').reverse().join(' ');
 }
@@ -116,7 +116,7 @@ function yoda(string) {
  *  @param {string} key
  */
 function vig(string, key) {
-    if (string == null || key == null)
+    if (typeof string !== "string" || typeof string !== "string")
         return "";
     let cryptedString = "";
     for (let i = 1; i <= string.length; i++) {
