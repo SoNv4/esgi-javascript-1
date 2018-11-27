@@ -15,7 +15,7 @@ function capitalize(string) {
         return "";
     return string.toLowerCase()
         .split(' ')
-        .map(string => uc_first(string))
+        .map(string => ucfirst(string))
         .join(' ');
 }
 
