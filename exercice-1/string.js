@@ -124,7 +124,7 @@ function vig(string, key) {
         const alphabetPositionKey = key.toUpperCase().charCodeAt((i - 1) % key.length) - 65;
         cryptedString += String.fromCharCode(65 + (alphabetPositionString + alphabetPositionKey) % 26);
     }
-    return cryptedString;
+    return cryptedString.toLowerCase();
 }
 
 // console.log(uc_first("hello"));
