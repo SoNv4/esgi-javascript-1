@@ -144,4 +144,4 @@ function vig(string, key) {
 //
 // console.log(verlan("Hello World"));
 // console.log(yoda("Hello World"));
-console.log(vig("une phrase tres tres longue mais qui ne veut absolument rien dire car c est juste un test", "nawakdecheznawak"));
+// console.log(vig("une phrase tres tres longue mais qui ne veut absolument rien dire car c est juste un test", "nawakdecheznawak"));
