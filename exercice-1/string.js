@@ -79,7 +79,7 @@ function prop_access(object, path) {
     if (path == null || path === '')
         return object;
     if (object == null) {
-        console.log('test not exist');
+        console.log(path + ' not exist');
         return;
     }
     const props = path.split('.');
